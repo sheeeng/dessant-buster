@@ -45,7 +45,7 @@ async function init() {
 
 function js(done) {
   exec(
-    `webpack-cli build --color --env mv3=${mv3}`,
+    `webpack-cli build --color --env appVersion=${appVersion} --env mv3=${mv3}`,
     function (err, stdout, stderr) {
       console.log(stdout);
       console.log(stderr);

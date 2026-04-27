@@ -324,9 +324,6 @@ export default {
     return {
       dataLoaded: false,
 
-      getSponsorUrl,
-      getSponsorLogo,
-
       listItems: {
         ...getListItems(
           {
@@ -403,6 +400,9 @@ export default {
 
   methods: {
     getText,
+
+    getSponsorUrl,
+    getSponsorLogo,
 
     setup: async function () {
       browser.runtime.onMessage.addListener(this.onMessage);
@@ -666,7 +666,7 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 736px) {
   .show-sponsors {
     & .v-application__wrap {
       grid-template-columns: minmax(280px, max-content) max-content;
@@ -677,22 +677,27 @@ export default {
         'misc sponsors';
       justify-content: center;
     }
+  }
 
-    .section-services {
-      grid-area: services;
-    }
+  .section-services {
+    grid-area: services;
+  }
 
-    .section-client {
-      grid-area: client;
-    }
+  .section-client {
+    grid-area: client;
+  }
 
-    .section-misc {
-      grid-area: misc;
-    }
+  .section-misc {
+    grid-area: misc;
+  }
 
-    .section-sponsors {
-      grid-area: sponsors;
-    }
+  .section-sponsors {
+    grid-area: sponsors;
+  }
+
+  & .vn-checkbox,
+  & .vn-switch {
+    grid-template-columns: min-content;
   }
 }
 </style>
