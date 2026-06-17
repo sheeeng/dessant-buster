@@ -21,7 +21,8 @@ const clientAppPlatforms = [
   'windows/amd64',
   'windows/386',
   'linux/amd64',
-  'macos/amd64'
+  'macos/amd64',
+  'macos/arm'
 ];
 
 // https://google.com/recaptcha/api2/anchor*

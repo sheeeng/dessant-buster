@@ -520,9 +520,13 @@ export default {
         if (!this.installGuideUrl) {
           this.installGuideUrl =
             'https://github.com/dessant/buster/wiki/Installing-the-client-app';
-          const {os, arch} = this.$env;
+          let {os, arch} = this.$env;
           if (clientAppPlatforms.includes(`${os}/${arch}`)) {
             this.installGuideUrl += `#${os}`;
+
+            if (os === 'macos' && arch === 'arm') {
+              arch = 'amd64';
+            }
             this.clientAppDownloadUrl = `https://github.com/dessant/buster-client/releases/download/v${clientAppVersion}/buster-client-setup-v${clientAppVersion}-${os}-${arch}`;
             if (os === 'windows') {
               this.clientAppDownloadUrl += '.exe';
